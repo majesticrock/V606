@@ -5,7 +5,10 @@ all: build/main.pdf
 #	TEXINPUTS=$$(pwd): python plot.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf:
+build/selektiv.pdf: selektiv.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python selektiv.py
+
+build/main.pdf: build/selektiv.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \

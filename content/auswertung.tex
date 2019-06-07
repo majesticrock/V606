@@ -1,2 +1,60 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+    \subsection{Untersuchung der Filterkurve}
+    In diesem Teil des Versuches wird zunächst die Durchlassfrequenz $\nu$ des Selektivverstärkers bestimmt, wobei eine
+    Eingangsspannung $U_{\symup{E}} = 100$ mV verwendet wird. Die gemessene Zuordnung
+    der Frequenzen $\nu$ mit den Spannungen $U_{\symup{A}}$ ist in \autoref{tab:selektiv} zu sehen. 
+    Die Spannungen werden gegen die Frequenzen aufgetragen, was in \autoref{fig:selektiv} zu sehen ist. Außerdem wird eine Lorentzkurve
+    \begin{equation}
+    \label{eqn:lorentz}
+        U = \frac{a}{(\nu^2 - \nu_{\symup{A}}^2)^2 + b^2 \nu_{\symup{A}}^2}
+    \end{equation}
+    durch die Messwerte von $34$ kHz bis $36$ kHz mittels des Python 3.7.0 Paketes Curve Fit gelegt. Die Parameter ergeben dadurch sich zu 
+    \begin{align*}
+    \nu_{\symup{A}} &= (35,375 \pm 0,007) \, \symup{kHz}, \\
+    a &= (6,9 \pm 0,3) \cdot 10^4 \, \symup{\frac{V}{s^4}}, \\
+    b &= (0,71 \pm 0,02) \, \symup{\frac{1}{s^2}}.
+    \end{align*}
+    Des Weiteren wird eine Gerade bei $\frac{1}{\sqrt{2}}$ der Maximalspannung $U_{\symup{max}}$ gelegt, also
+    $\frac{U_{\symup{max}}}{\sqrt{2}} = 77.78 \, \symup{V}$, gelegt. Die Schnittpunkte mit der Lorentzkurve sind bei
+    Frequenzen
+    \begin{align*}
+    \nu_{\symup{+}} &=
+    \nu_{\symup{-}} &=
+    \end{align*} 
+    gegeben. Dadurch ergibt sich die Güte
+    \begin{equation}
+    \label{eqn:guete}
+        Q = \frac{\nu_{\symup{A}}}{\nu_{\symup{-}} - \nu_{\symup{+}}}
+    \end{equation}
+    zu 
+    \\ \\
+    \centerline{$Q = $.}    
+    \\ \\
+    Der Fehler erechnet sich dabei über
+    \\ \\
+    \centerline{$\sqrt{\frac{\sigma_{\symup{\nu_{1}}}^{2} \nu_{\symup{A}}^{2}}{\left(\nu_{1} - \nu_{2}\right)^{4}} + \frac{\sigma_{\symup{\nu_{2}}}^{2} \nu_{\symup{A}}^{2}}{\left(\nu_{1} - \nu_{2}\right)^{4}} + \frac{\sigma_{\symup{\nu_{\symup{A}}}}^{2}}{\left(\nu_{1} - \nu_{2}\right)^{2}}}$}
+    \\ \\
+    \input{../content/selektiv.tex} 
+    \begin{figure}
+        \centering
+        \includegraphics{selektiv.pdf}
+        \caption{Plot der gemessenen Spannungen gegen die Frequenz mit Lorentzkurvenfit und Gerade zur Bestimmung der .}
+    \label{fig:selektiv}
+    \end{figure}
+
+    \subsection{Theoretische Bestimmung der Suszeptibilitäten}
+    Die Suszeptibilitäten der hier betrachteten Stoffe lassen sich nach Gleichung \eqref{eqn:Suszep???} bestimmen.
+    Der benötigte Lande-Faktor $g_{\symup{J}}$, sowie die Größen $L$, $S$ und $J$ der verschiedenen Stoffe sind in \autoref{tab:stoff}
+    aufgeführt. Des Weiteren zu sehen sind darin die Dichte $\rho$, die Masse $m$, die zugehörige molare Masse $M$ und die Zahl der magnetischen
+    Momente pro Volumeneinheit $N$, welche sich nach 
+    \begin{equation}
+    \label{eqn:N}
+        N = 2 \cdot \frac{\rho}{M} N_{\symup{A}}
+    \end{equation}
+    berechnet, wobei $N_{\symup{A}}$ die Avogadrokonstante ist. Die Werte von $J$, $L$ und $S$ werden durch Betrachtung der 4f-Elektronen 
+    der Stoffe bestimmt. Dabei ist zu Beachten, dass je nach Anzahl dieser Elektronen die Möglichkeiten die Spins anzuordnen variieren.
+    Nach dem Pauli-Prinzip sollen diese maximiert werden, wobei zu Beachten ist, dass es die Qunatenmechanik nicht zulässt, dass zwei 
+    Elektronen eines Atoms nicht in allen Quantenzahlen übereinstimmen. Dies wird beispielhaft für $\symup{Gd}_2\symup{O}_3$ gezeigt.
+    Dieser Stoff hat 7 4-f Elektronen. Nach der Hundschen Regel ergibt sich $L = 0$. Der Wert für $S$ ergibt sich außerdem zu 
+    $S = 3,5$. Damit bstimmt sich $J$ zu $J = L - S = 3,5$. 
