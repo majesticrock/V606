@@ -33,15 +33,15 @@ Dies setzt sich additiv zum Gesamtdrehimpuls $\vec{J}$ zusammen.
 Damit sind die Dipolmomente durch
 
 \begin{align}
-    \vec{\mu_\text{L}} &= - \frac{\mu_\text{B}}{\hslash} \vec{L} \\
-    \vec{\mu_\text{S}} &= - g_\text{S} \frac{\mu_\text{B}}{\hslash} \vec{S}
+    \vec{\mu}_\text{L} &= - \frac{\mu_\text{B}}{\hslash} \vec{L} \\
+    \vec{\mu}_\text{S} &= - g_\text{S} \frac{\mu_\text{B}}{\hslash} \vec{S}
 \end{align}
 
 gegeben, wobei $\mu_\text{B}$ das Bohr'sche Magneton und $g_\text{S}$ das gyromagnetische Verhältnis ist.
 
 \begin{figure}
     \centering
-    \includegraphics{skizze-drehimpuls.png}
+    \includegraphics[width=0.70\textwidth]{content/skizze-drehimpuls.png}
     \caption{Skizze zur Vektoraddition der Drehimpulse und der magnetischen Momente im Atom \cite{V606}.}
     \label{fig:skizze-dreh}
 \end{figure}
@@ -69,3 +69,71 @@ schreiben, wobei
 \end{equation}
 
 der Landé-Faktor ist.
+Des Weiteren kann die Richtung von $\vec{\mu}_\text{J}$ nicht beliebig sein. Für die $z$-Komponente ergibt sich
+
+\begin{equation}
+    \label{eqn:mu-z}
+    \mu_\text{J, z} = - \mu_\text{B} g_\text{J} m,
+\end{equation}
+
+wobei $m \in \{ -J, J+1, ... , J-1, J \}$ die magnetische Quantenzahl ist.
+Also gibt es eine diskrete Menge von möglichen Winkeln, welche jeweils eine potentielle Energie innehaben.
+Mit dieser kann die Magnetisierung bestimmt werden.
+Dazu wird die Häufigkeit des Auftretens der einzelnen Orientierungen berechnet und mit dem entsprechenden mangetischen Moment multipliziert.
+Diese Werte werden anschließend aufsummiert.
+
+Damit kann die Suszeptibilität über
+
+\begin{equation}
+    \label{eqn:suszep}
+    \chi = \mu_0 \mu_\text{B}^2 g_\text{J} \frac{N J (J + 1)}{3 k T}
+\end{equation}
+
+beschrieben werden.
+Dabei ist $k$ die Boltzmann-Konstante und $N$ die Anzahl der magnetischen Momente pro Volumeneinehit.
+
+Bei Atomen der Seltenen Erden sind in der 4f-Schale die Elektronen so angeordnet, dass diese einen endlichen Drehimpuls liefern.
+Daher lässt sich bei diesen Elementen der Paramagnetismus gut beobachten.
+Diese Anordnung und der zugehörige Gesamtdrehimpuls lässt sich mit den Hund'schen Regeln beschreiben:
+
+1. Die einzelnen Spins $\vec{s}_\text{i}$ kombinieren sich so nach dem Pauli-Prinzip, dass der Gesamtspin $\vec{S} = \sum \vec{s}_\text{i}$ maximal wird.
+
+2. Die einzelnen Bahndrehimpulse $\vec{l}_\text{i}$ ordnen sich so an, dass der Gesamtdrehimpuls $\vec{L} = \sum \vec{l}_\text{i}$ maximal wird und zugleich Regel 1 und dem Pauli-Prinzip folgen.
+
+3. Der Gesamtdrehimpuls ergibt sich zu $\vec{J} = \vec{L} + \vec{S}$, sollte die Schale mehr als halb gefüllt sein, beziehungsweise zu $\vec{J} = \vec{L} - \vec{S}$, wenn sie weniger als zur Hälfte gefüllt ist.
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.70\textwidth]{content/bruecke.png}
+    \caption{Schaltskizze der Brückenschaltung, welche zur Suszeptibilitätsmessung verwendet wird \cite{V606}.}
+    \label{fig:bruecke}
+\end{figure}
+
+Zur experimentellen Bestimmung der Suszeptibilität wird eine Brückenschaltung, wie in \autoref{fig:bruecke} zu sehen, verwendet.
+Jene beruht auf einer Induktivitätsdifferenz zwischen einer mit Luft und einer mit Material gefüllten Spule.
+Daher müssen die beiden Induktivitäten der beiden Spulen möglichst gleich sein.
+
+Zur Bestimmtun der Differenz können zwei Methoden verwendet werden.
+Für die erste wird die Brücke abgeglichen, sodass $U_\text{Br} = 0$ gilt.
+Wenn nun ein Material in eine der beiden Spule geschoben wird, so ändert sich die Spannung der Brücke, sodass daraus $\chi$ bestimmt werden kann.
+Dabei zeigt sich nach diversen Umformungen, dass für $\omega^2 L^2 >> R^2$, die Relation
+%TODO sehr viel größer als
+
+\begin{equation}
+    \label{eqn:suszep-spannung}
+    \chi = 4 \frac{F U\text{Br}}{Q U_\text{Sp}}
+\end{equation}
+
+gilt, wobei $F$ der Querschnitt der Spule und $Q$ der der Probe und $U_\text{Sp}$ die Speisespannung.
+
+Für die zweite Methode wird nach dem Einführen des Materials die Brücke erneut abgeglichen.
+Aus der Differenz der Widerstände $\Delta R$, welche zum Abgleichen nötig sind, kann mittels
+
+\begin{equation}
+    \label{eqn:suszep-wider}
+    \chi = 2 \frac{F \cdot \Delta R}{R_3 Q}
+\end{equation}
+
+die Suszeptibilität bestimmt werden. Dabei ist $R_3$ der Widerstand am Potentiometer.
