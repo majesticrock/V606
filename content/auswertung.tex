@@ -1,26 +1,26 @@
 \section{Auswertung}
 \label{sec:Auswertung}
     \subsection{Untersuchung der Filterkurve}
-    In diesem Teil des Versuches wird zunächst die Durchlassfrequenz $\nu$ des Selektivverstärkers bestimmt, wobei eine
-    Eingangsspannung $U_{\symup{E}} = 100$ mV verwendet wird. Die gemessene Zuordnung
-    der Frequenzen $\nu$ mit den Spannungen $U_{\symup{A}}$ ist in \autoref{tab:selektiv} zu sehen. 
+    In diesem Teil des Versuches wird zunächst die Durchlassfrequenz $\nu_{\symup{A}}$ des Selektivverstärkers bestimmt, wobei eine
+    Eingangsspannung $U_{\symup{E}} = 100$ mV verwendet wird. Es sei außerdem erwähnt, dass hier mit einer Verstärkung um den Faktor 100
+    gearbeitet wird. Die gemessene Zuordnung
+    der Frequenzen $\nu$ mit den Spannungen $U$ ist in \autoref{tab:selektiv} zu sehen. 
     Die Spannungen werden gegen die Frequenzen aufgetragen, was in \autoref{fig:selektiv} zu sehen ist. Außerdem wird eine Lorentzkurve
     \begin{equation}
     \label{eqn:lorentz}
         U = \frac{a}{(\nu^2 - \nu_{\symup{A}}^2)^2 + b^2 \nu_{\symup{A}}^2}
     \end{equation}
-    durch die Messwerte von $34$ kHz bis $36$ kHz mittels des Python 3.7.0 Paketes Curve Fit gelegt. Die Parameter ergeben dadurch sich zu 
+    durch die Messwerte von $34$ kHz bis $36$ kHz mittels des Python 3.7.0 Paketes Curve Fit gelegt. Die Parameter ergeben sich dadurch zu 
     \begin{align*}
     \nu_{\symup{A}} &= (35,375 \pm 0,007) \, \symup{kHz}, \\
     a &= (6,9 \pm 0,3) \cdot 10^4 \, \symup{\frac{V}{s^4}}, \\
-    b &= (0,71 \pm 0,02) \, \symup{\frac{1}{s^2}}.
+    b &= (- 0,71 \pm 0,02) \, \symup{\frac{1}{s^2}}.
     \end{align*}
-    Des Weiteren wird eine Gerade bei $\frac{1}{\sqrt{2}}$ der Maximalspannung $U_{\symup{max}}$ gelegt, also
-    $\frac{U_{\symup{max}}}{\sqrt{2}} = 77.78 \, \symup{V}$, gelegt. Die Schnittpunkte mit der Lorentzkurve sind bei
+    Des Weiteren wird eine Gerade bei $\frac{1}{\sqrt{2}}$ der Maximalspannung $U_{\symup{max}} = (107 \pm 9)$ V gelegt. Die Schnittpunkte mit der Lorentzkurve sind bei den
     Frequenzen
     \begin{align*}
-    \nu_{\symup{+}} &=
-    \nu_{\symup{-}} &=
+    \nu_{\symup{+}} &= (35,146 \pm 0,007) \symup{kHz}\\
+    \nu_{\symup{-}} &= (35,601 \pm 0,007) \symup{kHz}
     \end{align*} 
     gegeben. Dadurch ergibt sich die Güte
     \begin{equation}
@@ -29,23 +29,19 @@
     \end{equation}
     zu 
     \\ \\
-    \centerline{$Q = $.}    
-    \\ \\
-    Der Fehler erechnet sich dabei über
-    \\ \\
-    \centerline{$\sqrt{\frac{\sigma_{\symup{\nu_{1}}}^{2} \nu_{\symup{A}}^{2}}{\left(\nu_{1} - \nu_{2}\right)^{4}} + \frac{\sigma_{\symup{\nu_{2}}}^{2} \nu_{\symup{A}}^{2}}{\left(\nu_{1} - \nu_{2}\right)^{4}} + \frac{\sigma_{\symup{\nu_{\symup{A}}}}^{2}}{\left(\nu_{1} - \nu_{2}\right)^{2}}}$}
+    \centerline{$Q = 77,8 \pm 1,7 $.}    
     \\ \\
     \input{../content/selektiv.tex} 
     \begin{figure}
         \centering
         \includegraphics{selektiv.pdf}
-        \caption{Plot der gemessenen Spannungen gegen die Frequenz mit Lorentzkurvenfit und Gerade zur Bestimmung der .}
+        \caption{Plot der gemessenen Spannungen gegen die Frequenz mit Lorentzkurvenfit und Gerade zur Bestimmung der Durchlassfrequenz und der Güte.}
     \label{fig:selektiv}
     \end{figure}
 
     \subsection{Theoretische Bestimmung der Suszeptibilitäten}
-    Die Suszeptibilitäten der hier betrachteten Stoffe lassen sich nach Gleichung \eqref{eqn:Suszep???} bestimmen.
-    Der benötigte Lande-Faktor $g_{\symup{J}}$, sowie die Größen $L$, $S$ und $J$ der verschiedenen Stoffe sind in \autoref{tab:stoff}
+    Die Suszeptibilitäten der hier betrachteten Stoffe lassen sich nach Gleichung \eqref{eqn:suszep} bestimmen.
+    Der benötigte Lande-Faktor $g_{\symup{J}}$, sowie die Größen $L$, $S$ und $J$ der verschiedenen Stoffe sind in \autoref{tab:theoriewerte}
     aufgeführt. Des Weiteren zu sehen sind darin die Dichte $\rho$, die Masse $m$, die zugehörige molare Masse $M$ und die Zahl der magnetischen
     Momente pro Volumeneinheit $N$, welche sich nach 
     \begin{equation}
@@ -55,6 +51,48 @@
     berechnet, wobei $N_{\symup{A}}$ die Avogadrokonstante ist. Die Werte von $J$, $L$ und $S$ werden durch Betrachtung der 4f-Elektronen 
     der Stoffe bestimmt. Dabei ist zu Beachten, dass je nach Anzahl dieser Elektronen die Möglichkeiten die Spins anzuordnen variieren.
     Nach dem Pauli-Prinzip sollen diese maximiert werden, wobei zu Beachten ist, dass es die Qunatenmechanik nicht zulässt, dass zwei 
-    Elektronen eines Atoms nicht in allen Quantenzahlen übereinstimmen. Dies wird beispielhaft für $\symup{Gd}_2\symup{O}_3$ gezeigt.
-    Dieser Stoff hat 7 4f Elektronen. Nach der Hundschen Regel ergibt sich $L = 0$. Der Wert für $S$ ergibt sich außerdem zu 
-    $S = 3,5$. Damit bstimmt sich $J$ zu $J = L - S = 3,5$. 
+    Elektronen eines Atoms nicht in allen Quantenzahlen übereinstimmen. Dies wird beispielhaft für $\symup{Dy}_2\symup{O}_3$ gezeigt.
+    Dieser Stoff hat 9 4f Elektronen. Nach der Hundschen Regel ergibt sich $L = -3-2-1-0+1 = -5$, wobei der Betrag betrachtet wird.
+    Der Wert für $S$ ergibt sich außerdem zu $S = 7 \cdot \frac{1}{2} - 2 \cdot \frac{1}{2} = 2,5$.
+     Damit bstimmt sich $J$ zu $J = L - S = 4,5$. Diese Werte sowie die Dichten $\rho$, die Massen $m$, molaren Massen $M$ und die 
+    Teilchenanzahl pro Volumeneinheit $N$ sind in \autoref{tab:theoriewerte} zu sehen. Außerdem ist der Landefaktor dargestellt,
+    welcher sich nach Gleichung \eqref{eqn:lande} berechnet. In dieser Rechnung wird eine Raumtemperatur von $T = 293,15$ K angenommen.
+
+    \input{../content/theoretischewerte.tex}
+    Durch Anwenden von Gleichung \eqref{eqn:suszep}, unter Verwendung der Werte aus \autoref{tab:theoriewerte}, ergeben sich die gesuchten 
+    Suszeptibilitäten der verschiednen Stoffe zu 
+    \begin{align*}
+        \chi_{\symup{Nd}_2\symup{O}_3} &= 0,003, \\
+        \chi_{\symup{Gd}_2\symup{O}_3} &= 0,014, \\
+        \chi_{\symup{Dy}_2\symup{O}_3} &= 0,025, \\
+        \chi_{\symup{C}_6\symup{O}_{12}\symup{Pr}_2} &= 0,001. 
+    \end{align*} 
+
+    \subsection{Experimentelle Bestimmung der Suszeptibilitäten}
+    Die experimentelle Bestimmung der Suszeptibilitäten verläuft nach Gleichung \eqref{eqn:suszep-spannung} und \eqref{eqn:suszep-wider},
+    wobei das dort verwendete $Q$ durch den Querschnitt
+    \begin{equation}
+    \label{eqn:qreal}
+    Q_{\symup{real}} = \frac{m}{\rho l}
+    \end{equation}
+    ersetzt wird. Dieser entspricht dem Querschnitt, welcher aufträte wenn die Probe nur aus einem Einkristall bestünde.
+    Hierbei ist $m$ die Masse der Probe, $\rho$ die Dichte der Probe und $l$ die Länge der Probe. Letztere beträgt bei allen 
+    Proben $l = 135$ mm. Masse und Dichte der Proben sind in \autoref{tab:theoriewerte} zu sehen.
+    Die berechneten Querschnitte sind in \autoref{tab:querschnitt} zu sehen.
+    \input{../content/querschnitt.tex}
+    Des Weiteren wird eine Eingangsspannung von $U_{\symup{Speis}} = 0,5$ V verwendet und wie schon im Versuchsteil zuvor eine Gesamtverstärkung
+    des Signals um den Faktor 100. In \autoref{tab:Nd2O3}, 5, 6 und 7 sind die gemessenen
+    Werte zu sehen. Hierbei bezeichnet $U_0$ beziehungsweise $R_0$ die anfangs gemessene Spannung beziehungsweise Widerstand, also ohne
+    Probe in der Spule, während $U_{\symup{P}}$ und $R_{\symup{P}}$ die gemessenen Werte mit in die Spule eingeführter Probe sind. Des
+    Weiteren sind die Differenzen $\Delta R$ und $\Delta U$ ebenfalls dargestellt.
+    \input{../content/Nd2O3.tex}
+    \input{../content/Gd2O3.tex}
+    \input{../content/Dy2O3.tex}
+    \input{../content/C6O12Pr2.tex}
+    Über diese Differenzen wird mit Python 3.7.0 gemittelt. Die gemittelten Werte sind in \autoref{tab:mittel} zu sehen.
+    \input{../content/mittel.tex}
+    Nach Gleichung \eqref{eqn:suszep-spannung} und \eqref{eqn:suszep-wider} lässt sich die Suszeptibilität einmal über den Widerstand und 
+    einmal über die Spannung bestimmen. Dabei werden die gemittelten Werte aus \autoref{tab:mittel} verwendet.
+    Des Weiteren ist $F = 86,6 \symup{mm}^2$ der Querschnitt der Spule und $R_3 = 998 \, \symup{ \Omega}$ ein Ohmscher Widerstand.
+    Die erechneten Suszeptibilitäten sind in \autoref{eqn:suszep} dargestellt.
+    \input{../content/suszept.tex}

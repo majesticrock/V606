@@ -1,4 +1,4 @@
-{$U_0$ / mV};{$R_0$ / $\symup{\omega}$};{$U_{\symup{m}}$ / mV};{$R_{\symup{m}}$ / $\symup{\omega}$};{$\Delta U$ / mV};{$\Delta R$ / $\symup{\omega}$}
+{$U_0$ / mV};{$R_0$ / $\symup{\omega}$};{$U_{\symup{m}}$ / mV};{$R_{\symup{m}}$ / $\symup{\omega}$};{$\Delta R$ / $\symup{\omega}$};{$\Delta U$ / mV}
 7.9;2.565;21.5;1.055;1.510;13.6
 6.5;2.605;21.0;1.055;1.550;14.5
 6.5;2.635;22.0;1.030;1.605;15.5

@@ -63,4 +63,12 @@ def csv2textable(pathToFile, caption, label, format, delimiter=";"):
 
 #csv2textable("csv/blei.csv", "Gesamtzählraten mit Blei als Abschirmmaterial bei verschiedenen Dicken.", "blei", "S[table-format=1.1] S[table-format=3.0] S[table-format=5.0] @{${}\pm{}$} S[table-format=3.0]")
 
-csv2textable("csv/selektiv.csv", "Messwerte der Filterkurve des Selektivverstärkers.", "selektiv", "c c")
+
+
+
+    
+
+csv2textable("csv/Nd2O3.csv", "Messwerte und zugehörige Differenzen von $\symup{Nd}_2\symup{O}_3$ .", "Nd2O3", "c c c c c c")
+csv2textable("csv/Dy2O3.csv", "Messwerte und zugehörige Differenzen von $\symup{Dy}_2\symup{O}_3$.", "Dy2O3", "c c c c c c")
+csv2textable("csv/Gd2O3.csv", "Messwerte und zugehörige Differenzen von  $\symup{Gd}_2\symup{O}_3$.", "Gd2O3", "c c c c c c")
+csv2textable("csv/C6O12Pr2.csv", "Messwerte und zugehörige Differenzen von $\symup{C}_6\symup{O}_{12}\symup{Pr}_2$.", "C6O12Pr2", "c c c c c c")
